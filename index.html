@@ -39,15 +39,175 @@ body {
   max-width:980px;
   margin:auto;
 }
+.hero {
+  position:relative;
+  height:325px;
+  overflow:hidden;
+  border:1px solid #a88249;
+  border-bottom:4px solid #d0a45e;
+  box-shadow:0 0 16px rgba(205,163,91,.2);
+  text-align:center;
+}
+.hero img {
+  position:absolute;
+  top:0;
+  right:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.hero:after {
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background:linear-gradient(90deg,rgba(0,0,0,.1),rgba(0,0,0,.4) 25%,rgba(0,0,0,.76) 50%,rgba(0,0,0,.4) 75%,rgba(0,0,0,.1));
+}
+.hero span,
+.hero h1 {
+  position:relative;
+  z-index:1;
+  display:block;
+  margin:0;
+  direction:ltr;
+}
+.hero span:first-of-type {
+  position:absolute;
+  top:48px;
+  right:0;
+  left:0;
+  z-index:1;
+  padding-top:0;
+  color:rgba(225,190,110,.45);
+  font-family:Impact;
+  font-size:160px;
+  letter-spacing:10px;
+  line-height:.72;
+  -webkit-text-fill-color:transparent;
+  -webkit-text-stroke:2.5px rgba(225,190,110,.65);
+}
+.hero h1 {
+  position:absolute;
+  top:124px;
+  right:0;
+  left:0;
+  z-index:2;
+  color:#f0c86d;
+  font-family:Impact;
+  font-size:86px;
+  font-weight:500;
+  letter-spacing:4px;
+  line-height:1;
+  text-shadow:0 2px 1px #563a10,0 0 12px rgba(235,184,75,.34);
+}
+.hero span:last-of-type {
+  position:absolute;
+  top:237px;
+  right:0;
+  left:0;
+  z-index:3;
+  margin-top:0;
+  color:#f7efe1;
+  font-family:Impact;
+  font-size:24px;
+  font-weight:500;
+  letter-spacing:5px;
+}
+.hero span:last-of-type:before,
+.hero span:last-of-type:after {
+  content:"";
+  display:inline-block;
+  width:74px;
+  height:1px;
+  margin:0 14px 5px;
+  background:#c79b52;
+}
+.adBanner {
+  position:relative;
+  height:162px;
+  margin-top:17px;
+  overflow:hidden;
+  border:1px solid #8d7044;
+  border-bottom:3px solid #d0a45e;
+  background:#070707 repeating-linear-gradient(135deg,rgba(216,174,100,.055) 0,rgba(216,174,100,.055) 12px,transparent 12px,transparent 26px);
+  box-shadow:inset 0 0 45px #000,0 5px 16px #000;
+  text-align:center;
+}
+.adBanner:before {
+  content:"";
+  position:absolute;
+  top:50%;
+  right:24px;
+  left:24px;
+  height:1px;
+  background:#7e6238;
+}
+.adBanner span {
+  position:relative;
+  z-index:1;
+  display:inline-block;
+  margin-top:55px;
+  padding:9px 28px;
+  background:#070707;
+  border-right:2px solid #d0a45e;
+  border-left:2px solid #d0a45e;
+  color:#e4bd73;
+  font-size:20px;
+  font-weight:bold;
+}
 @media(max-width:650px) {
   .container {
     padding:8px 5px 25px;
+  }
+  .hero {
+    height:235px;
+  }
+  .hero span:first-of-type {
+    top:70px;
+    padding-top:0;
+    font-size:72px;
+    letter-spacing:5px;
+  }
+  .hero h1 {
+    top:110px;
+    font-size:48px;
+    letter-spacing:2px;
+  }
+  .hero span:last-of-type {
+    top:165px;
+    margin-top:0;
+    font-size:15px;
+    letter-spacing:3px;
+  }
+  .hero span:last-of-type:before,
+  .hero span:last-of-type:after {
+    width:28px;
+    margin:0 7px 4px;
+  }
+  .adBanner {
+    height:117px;
+    margin-top:10px;
+  }
+  .adBanner span {
+    margin-top:36px;
+    padding:7px 18px;
+    font-size:16px;
   }
 </style>
 </head>
 <body>
 <div class="container">
-<div class="wrap"></div>
+<div class="wrap">
+<div class="hero">
+<img src="./hero.png" alt="Camp Gaming">
+<span>WELCOME</span>
+<h1>CAMP GAMING</h1>
+<span>CS 1.6 SERVERS</span>
+</div>
+<div class="adBanner"><span>اینجا محل تبلیغات شماست</span></div>
+</div>
 </div>
 </body>
 </html>
