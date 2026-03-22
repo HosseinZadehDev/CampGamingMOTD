@@ -221,6 +221,10 @@ th {
   letter-spacing:.5px;
 }
 .copy,
+.buttons a {
+  cursor:pointer;
+  text-decoration:none;
+}
 .copy {
   min-width:66px;
   padding:7px 11px;
@@ -228,6 +232,76 @@ th {
   background:#efd7a8;
   color:#171109;
   font-family:Vazirmatn;
+}
+.buttons {
+  display:table;
+  width:100%;
+  table-layout:fixed;
+  border-spacing:9px 0;
+}
+.buttons a {
+  display:table-cell;
+  width:25%;
+  height:54px;
+  padding:7px 15px;
+  border:1px solid #c49a58;
+  background:#efd7a8;
+  color:#171109;
+  vertical-align:middle;
+  box-shadow:inset 0 0 8px rgba(255,255,255,.6);
+}
+.buttons img {
+  float:left;
+  width:27px;
+  height:27px;
+  margin-top:6px;
+}
+.buttons span {
+  float:right;
+  padding-top:4px;
+  color:#171109;
+  font-family:Vazirmatn;
+  font-weight:bold;
+  line-height:34px;
+}
+.rules ol {
+  margin:0;
+  padding:0;
+  list-style:none;
+  overflow:hidden;
+}
+.rules li {
+  float:right;
+  width:50%;
+  min-height:43px;
+  padding:9px 7px;
+  border-bottom:1px dashed #29231b;
+  color:#d8d0c4;
+  font-size:12px;
+}
+.rules li span {
+  display:inline-block;
+  width:25px;
+  height:25px;
+  margin-left:12px;
+  border:1px solid #c79d5a;
+  background:#efd7a8;
+  color:#171109;
+  font-family:Vazirmatn;
+  line-height:24px;
+  font-weight: 600;
+  text-align:center;
+}
+.rules li em {
+  position:relative;
+  top:-2px;
+  font-style:normal;
+}
+.hint {
+  padding-bottom:12px;
+  border-bottom:1px solid #332b20;
+  color:#958b7d;
+  font-size:12px;
 }
 @media(max-width:650px) {
   .container {
@@ -270,6 +344,20 @@ th {
   .panel {
     padding:13px;
   }
+  .buttons,
+  .buttons a {
+    display:block;
+    width:100%;
+  }
+  .buttons a {
+    height:54px;
+    margin:8px 0;
+  }
+  .rules li {
+    float:none;
+    width:100%;
+  }
+}
 </style>
 </head>
 <body>
@@ -287,9 +375,11 @@ th {
 </div>
 <script>
 var servers=[['Public Galaxy','5.57.34.87:27015'],['Public Normal','5.57.34.87:27016'],['Match Classic','5.57.34.87:27017'],['MIX / AIM / AWP','5.57.34.87:27018'],['Zombie Biohazard','5.57.34.87:27019']];
+var socialLinks=[['@campgamingir','https://www.youtube.com/@campgamingir','./icons/youtube.svg'],['@camp_gaming_news','https://t.me/camp_gaming_news','./icons/telegram.svg'],['@campgaming.ir','https://www.aparat.com/campgaming.ir','./icons/aparat.svg'],['campgaming.ir:1058','campgaming.ir:1058','./icons/teamspeak.svg']];
+var rules=['با همه بازیکنان محترمانه رفتار کنید.','از استفاده از هرگونه چیت، هک یا اسکریپت خودداری کنید.','از توهین، تهدید و ایجاد درگیری در سرور خودداری کنید.','از نام یا تصویر نامناسب استفاده نکنید.','از تبلیغ سرور، سایت یا کانال دیگر خودداری کنید.','از اسپم کردن در چت و میکروفون خودداری کنید.','از پخش موسیقی و صدای آزاردهنده خودداری کنید.','دستورهای ادمین‌ها را رعایت کنید.','از سوءاستفاده از باگ‌های بازی یا مپ خودداری کنید.','گزارش تخلف را همراه با مدرک برای مدیریت ارسال کنید.','افشای موقعیت هم‌تیمی‌ها خودداری کنید.','عمداً به هم‌تیمی‌ها آسیب نزنید.','از مسدود کردن مسیر بازیکنان خودداری کنید.','هدف هر مپ و سناریوی بازی را انجام دهید.','از رأی‌گیری‌های بی‌دلیل استفاده نکنید.','از جعل هویت ادمین‌ها یا بازیکنان خودداری کنید.','از بحث‌های سیاسی و مذهبی تنش‌زا خودداری کنید.','زبان اصلی چت عمومی انگلیسی است.','تصمیم نهایی درباره تخلفات با مدیریت مجموعه است.','ورود به سرور به معنی پذیرش تمام قوانین است.'];
 function e(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');}
 function copy(v,b){var t=document.createElement('textarea'),ok=false;t.value=v;t.style.position='absolute';t.style.left='-9999px';document.body.appendChild(t);t.select();try{ok=document.execCommand('copy');}catch(x){}document.body.removeChild(t);b.innerHTML=ok?'کپی شد':'کپی دستی';setTimeout(function(){b.innerHTML=b.getAttribute('data-label')||'کپی';},1200);}
-function build(){var r='',i;for(i=0;i<servers.length;i++)r+='<tr><td>'+(i+1)+'</td><td class="server">'+e(servers[i][0])+'</td><td class="ip" dir="ltr">'+servers[i][1]+'</td><td><button class="copy" data-label="کپی" onclick="copy(\''+servers[i][1]+'\',this)">کپی</button></td></tr>';document.getElementById('app').innerHTML='<div class="panel servers"><h2><b>01</b> لیست سرورها</h2><div class="tableBox"><table><thead><tr><th>#</th><th>نام سرور</th><th>آدرس اتصال</th><th>عملیات</th></tr></thead><tbody>'+r+'</tbody></table></div></div>';}
+function build(){var r='',l='',s='',i;for(i=0;i<servers.length;i++)r+='<tr><td>'+(i+1)+'</td><td class="server">'+e(servers[i][0])+'</td><td class="ip" dir="ltr">'+servers[i][1]+'</td><td><button class="copy" data-label="کپی" onclick="copy(\''+servers[i][1]+'\',this)">کپی</button></td></tr>';for(i=0;i<rules.length;i++)l+='<li><span>'+(i+1)+'</span><em>'+e(rules[i])+'</em></li>';for(i=0;i<socialLinks.length;i++)s+='<a href="#" onclick="copy(\''+socialLinks[i][1]+'\',this);return false"><span dir="ltr">&#8206;'+e(socialLinks[i][0])+'</span><img src="'+socialLinks[i][2]+'" alt=""></a>';document.getElementById('app').innerHTML='<div class="panel servers"><h2><b>01</b> لیست سرورها</h2><div class="tableBox"><table><thead><tr><th>#</th><th>نام سرور</th><th>آدرس اتصال</th><th>عملیات</th></tr></thead><tbody>'+r+'</tbody></table></div></div><div class="panel social"><h2><b>02</b> ما را در شبکه‌های اجتماعی دنبال کنید</h2><div class="buttons">'+s+'</div></div><div class="panel rules"><h2><b>03</b> قوانین مجموعه</h2><p class="hint">حضور شما در سرورها به معنی مطالعه و پذیرش قوانین زیر است.</p><ol>'+l+'</ol></div>';}
 build();
 </script>
 </body>
