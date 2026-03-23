@@ -264,6 +264,9 @@ th {
   font-weight:bold;
   line-height:34px;
 }
+.contact a {
+  width:33.333%;
+}
 .rules ol {
   margin:0;
   padding:0;
@@ -302,6 +305,29 @@ th {
   border-bottom:1px solid #332b20;
   color:#958b7d;
   font-size:12px;
+}
+.footer {
+  padding:26px 0 5px;
+  text-align:center;
+}
+.footer strong {
+  color:#d8ae64;
+  font-family:Impact;
+  font-size:21px;
+  font-weight:500;
+  letter-spacing:5px;
+}
+.footer span {
+  display:block;
+  color:#83745e;
+  font-family:Impact;
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:3px;
+}
+.footer a {
+  color:#e0b25e;
+  text-decoration: none;
 }
 @media(max-width:650px) {
   .container {
@@ -376,10 +402,11 @@ th {
 <script>
 var servers=[['Public Galaxy','5.57.34.87:27015'],['Public Normal','5.57.34.87:27016'],['Match Classic','5.57.34.87:27017'],['MIX / AIM / AWP','5.57.34.87:27018'],['Zombie Biohazard','5.57.34.87:27019']];
 var socialLinks=[['@campgamingir','https://www.youtube.com/@campgamingir','./icons/youtube.svg'],['@camp_gaming_news','https://t.me/camp_gaming_news','./icons/telegram.svg'],['@campgaming.ir','https://www.aparat.com/campgaming.ir','./icons/aparat.svg'],['campgaming.ir:1058','campgaming.ir:1058','./icons/teamspeak.svg']];
+var contactLinks=[['CAMPGAMING.IR','http://campgaming.ir','./icons/web.svg'],['@SARHANGCS','@SARHANGCS','./icons/rubika.svg'],['@SARHANGCS','@SARHANGCS','./icons/telegram.svg']];
 var rules=['با همه بازیکنان محترمانه رفتار کنید.','از استفاده از هرگونه چیت، هک یا اسکریپت خودداری کنید.','از توهین، تهدید و ایجاد درگیری در سرور خودداری کنید.','از نام یا تصویر نامناسب استفاده نکنید.','از تبلیغ سرور، سایت یا کانال دیگر خودداری کنید.','از اسپم کردن در چت و میکروفون خودداری کنید.','از پخش موسیقی و صدای آزاردهنده خودداری کنید.','دستورهای ادمین‌ها را رعایت کنید.','از سوءاستفاده از باگ‌های بازی یا مپ خودداری کنید.','گزارش تخلف را همراه با مدرک برای مدیریت ارسال کنید.','افشای موقعیت هم‌تیمی‌ها خودداری کنید.','عمداً به هم‌تیمی‌ها آسیب نزنید.','از مسدود کردن مسیر بازیکنان خودداری کنید.','هدف هر مپ و سناریوی بازی را انجام دهید.','از رأی‌گیری‌های بی‌دلیل استفاده نکنید.','از جعل هویت ادمین‌ها یا بازیکنان خودداری کنید.','از بحث‌های سیاسی و مذهبی تنش‌زا خودداری کنید.','زبان اصلی چت عمومی انگلیسی است.','تصمیم نهایی درباره تخلفات با مدیریت مجموعه است.','ورود به سرور به معنی پذیرش تمام قوانین است.'];
 function e(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');}
 function copy(v,b){var t=document.createElement('textarea'),ok=false;t.value=v;t.style.position='absolute';t.style.left='-9999px';document.body.appendChild(t);t.select();try{ok=document.execCommand('copy');}catch(x){}document.body.removeChild(t);b.innerHTML=ok?'کپی شد':'کپی دستی';setTimeout(function(){b.innerHTML=b.getAttribute('data-label')||'کپی';},1200);}
-function build(){var r='',l='',s='',i;for(i=0;i<servers.length;i++)r+='<tr><td>'+(i+1)+'</td><td class="server">'+e(servers[i][0])+'</td><td class="ip" dir="ltr">'+servers[i][1]+'</td><td><button class="copy" data-label="کپی" onclick="copy(\''+servers[i][1]+'\',this)">کپی</button></td></tr>';for(i=0;i<rules.length;i++)l+='<li><span>'+(i+1)+'</span><em>'+e(rules[i])+'</em></li>';for(i=0;i<socialLinks.length;i++)s+='<a href="#" onclick="copy(\''+socialLinks[i][1]+'\',this);return false"><span dir="ltr">&#8206;'+e(socialLinks[i][0])+'</span><img src="'+socialLinks[i][2]+'" alt=""></a>';document.getElementById('app').innerHTML='<div class="panel servers"><h2><b>01</b> لیست سرورها</h2><div class="tableBox"><table><thead><tr><th>#</th><th>نام سرور</th><th>آدرس اتصال</th><th>عملیات</th></tr></thead><tbody>'+r+'</tbody></table></div></div><div class="panel social"><h2><b>02</b> ما را در شبکه‌های اجتماعی دنبال کنید</h2><div class="buttons">'+s+'</div></div><div class="panel rules"><h2><b>03</b> قوانین مجموعه</h2><p class="hint">حضور شما در سرورها به معنی مطالعه و پذیرش قوانین زیر است.</p><ol>'+l+'</ol></div>';}
+function build(){var r='',l='',s='',c='',i;for(i=0;i<servers.length;i++)r+='<tr><td>'+(i+1)+'</td><td class="server">'+e(servers[i][0])+'</td><td class="ip" dir="ltr">'+servers[i][1]+'</td><td><button class="copy" data-label="کپی" onclick="copy(\''+servers[i][1]+'\',this)">کپی</button></td></tr>';for(i=0;i<rules.length;i++)l+='<li><span>'+(i+1)+'</span><em>'+e(rules[i])+'</em></li>';for(i=0;i<socialLinks.length;i++)s+='<a href="#" onclick="copy(\''+socialLinks[i][1]+'\',this);return false"><span dir="ltr">&#8206;'+e(socialLinks[i][0])+'</span><img src="'+socialLinks[i][2]+'" alt=""></a>';for(i=0;i<contactLinks.length;i++)c+='<a href="#" onclick="copy(\''+contactLinks[i][1]+'\',this);return false"><span dir="ltr">'+e(contactLinks[i][0])+'</span><img src="'+contactLinks[i][2]+'" alt=""></a>';document.getElementById('app').innerHTML='<div class="panel servers"><h2><b>01</b> لیست سرورها</h2><div class="tableBox"><table><thead><tr><th>#</th><th>نام سرور</th><th>آدرس اتصال</th><th>عملیات</th></tr></thead><tbody>'+r+'</tbody></table></div></div><div class="panel social"><h2><b>02</b> ما را در شبکه‌های اجتماعی دنبال کنید</h2><div class="buttons">'+s+'</div></div><div class="panel rules"><h2><b>03</b> قوانین مجموعه</h2><p class="hint">حضور شما در سرورها به معنی مطالعه و پذیرش قوانین زیر است.</p><ol>'+l+'</ol></div><div class="panel contact"><h2><b>04</b> اطلاعات تماس</h2><div class="buttons">'+c+'</div></div><div class="footer"><strong>CAMP GAMING</strong><span>DEVELOP BY <a href="https://hosseinzadeh.info">HIJACKER</a></span></div>';}
 build();
 </script>
 </body>
