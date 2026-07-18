@@ -44,7 +44,3 @@ CampGamingMOTD/
 3. شبکه‌های اجتماعی
 4. قوانین مجموعه
 5. اطلاعات تماس و پاورقی
-
-## توسعه‌دهنده
-
-توسعه داده‌شده توسط [HosseinZadehDev](https://github.com/HosseinZadehDev).
